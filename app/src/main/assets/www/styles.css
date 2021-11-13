@@ -1,0 +1,22 @@
+h1 {margin-top: 30%;}
+
+.center-t {text-align: center;}
+.center-c {
+	text-align:center;
+	justify-content: center;
+}
+
+.counter {visibility: hidden;}
+.red {color: red;}
+
+#begin {visibility: hidden;}
+#end {visibility:hidden;}
+#numbers {visibility: hidden;}
+#late {display: none;}
+#lost {display: none;}
+#no {visibility : hidden;}
+#result {visibility : hidden;}
+#stop {display: none;}
+#stopped {display:none;}
+#win {display: none;}
+#yes {visibility : hidden;}

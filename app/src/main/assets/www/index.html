@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>COBOL wasm</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" href="./pure.min.css">
+	<link rel="stylesheet" href="./grids-responsive.min.css">
+	<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+	<!--pre id="logger"></pre>
+	<script src="log.js"></script-->
+	<script type="text/javascript" src="app.js"></script>
+	<div class="pure-g pure-u-1-1 center-c">
+		<p>GUESS THE NUMBER</p>
+	</div>
+
+
+	<div id="begin" class="pure-g pure-u-1-1 center-t white">
+		<p>I have thought of a number.<br/>Try to guess it before time elapsed!</p>
+	</div>
+	<div class="counter pure-g pure-u-1-1 center-t">
+		<p>Counter:&nbsp;<span id="count"></span><span id="late" class="red">Too Late!</span></span></p>
+	</div>
+	<div id="numbers" class="pure-g center-c btn">
+		<button id="b1" class="pure-button pure-u-1-3 pure-u-sm-1-12" value="1" onclick="toPrompt(this.value);">1</button>
+		<button id="b2" class="pure-button pure-u-1-3 pure-u-sm-1-12" value="2" onclick="toPrompt(this.value);">2</button>
+		<button id="b3" class="pure-button pure-u-1-3 pure-u-sm-1-12" value="3" onclick="toPrompt(this.value);">3</button>
+		<button id="b4" class="pure-button pure-u-1-3 pure-u-sm-1-12" value="4" onclick="toPrompt(this.value);">4</button>
+		<button id="b5" class="pure-button pure-u-1-3 pure-u-sm-1-12" value="5" onclick="toPrompt(this.value);">5</button>
+		<button id="b6" class="pure-button pure-u-1-3 pure-u-sm-1-12" value="6" onclick="toPrompt(this.value);">6</button>
+		<button id="b7" class="pure-button pure-u-1-3 pure-u-sm-1-12" value="7" onclick="toPrompt(this.value);">7</button>
+		<button id="b8" class="pure-button pure-u-1-3 pure-u-sm-1-12" value="8" onclick="toPrompt(this.value);">8</button>
+		<button id="b9" class="pure-button pure-u-1-3 pure-u-sm-1-12" value="9" onclick="toPrompt(this.value);">9</button>
+	</div>
+	<div class="pure-g pure-u-1-1 center-t white">
+		<p id="result">&nbsp;<span id="win">You WIN!</span><span id="lost">WRONG. Try again.</span></p>
+		<p id="stopped">You've interrupted the game.</p>
+		<p id="end">The number was <span id="nb"></span>. Play again?</p></div>
+	</div>
+	<div class="pure-g center-c btn">
+		<button id="yes" class="pure-button pure-u-1-5 cics" onclick="refresh();">Yes</button>
+		<button id="draw" class="pure-button pure-u-1-5 cics" value="D" onclick="toPrompt(this.value);">Begin</button>
+		<!--button id="stop" class="pure-button pure-u-1-5 cics" value="S" onclick="toPrompt(this.value);">Stop</button-->
+		<button id="no" class="pure-button pure-u-1-5 cics" value="N" onclick="window.location.href = 'bye.html';">No</button>
+	</div>
+
+
+	<script type="text/javascript">
+		
+		/* In moxon6's app.js, key kode feeds window.prompt.
+		This function reuses that functionality and sends any value to STDIN () */
+		function toPrompt(v) {
+			window.dispatchEvent(new KeyboardEvent('keydown', {code : v}));
+		}
+		
+		function refresh() {
+			window.location.reload(true);
+		}
+
+	</script>
+	<script async type="text/javascript" src="index.js"></script>
+</body>
+</html>
